@@ -1,4 +1,59 @@
+############################
+# Build artifacts
+############################
+/build/
+/cmake-build-*/
+/out/
+/bin/
+/lib/
+/dist/
+
+############################
+# Compiled object files
+############################
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+############################
+# Compiled executables
+############################
+*.exe
+*.out
+*.app
+*.elf
+
+############################
+# CMake files
+############################
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+############################
+# IDE-specific files
+############################
+
+# CLion
 .idea/
-cmake-build-*/
-build/
+*.iml
+
+# VSCode
+.vscode/
+
+############################
+# OS/system files
+############################
 .DS_Store
+Thumbs.db
+
+############################
+# Logs, caches, temporary
+##
