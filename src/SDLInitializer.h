@@ -5,7 +5,7 @@
 #include <SDL_render.h>
 #include <SDL_video.h>
 
-#include "../utils/Log.h"
+#include "utils/Log.h"
 
 using namespace std;
 

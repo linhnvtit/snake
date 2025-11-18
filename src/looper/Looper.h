@@ -8,7 +8,7 @@
 #include <vector>
 #include <atomic>
 
-#include "../../utils/Log.h"
+#include "../utils/Log.h"
 #include "IJob.h"
 
 using namespace std;

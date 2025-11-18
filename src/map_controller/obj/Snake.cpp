@@ -4,7 +4,7 @@
 
 #include "Snake.h"
 
-#include "../../../utils/Utils.h"
+#include "../../utils/Utils.h"
 
 void Snake::init() {
     direction = Direction::DOWN;

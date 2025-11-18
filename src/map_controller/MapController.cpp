@@ -5,7 +5,7 @@
 #include "MapController.h"
 
 #include "../Type.h"
-#include "../../utils/Log.h"
+#include "../utils/Log.h"
 #include "obj/Snake.h"
 
 void MapController::initMap() {
