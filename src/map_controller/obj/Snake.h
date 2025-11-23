@@ -4,6 +4,8 @@
 
 #ifndef SNAKE_SNAKE_H_H
 #define SNAKE_SNAKE_H_H
+#include <functional>
+
 #include "../../Type.h"
 
 
@@ -24,14 +26,15 @@ public:
     void grow();
 
     SnakeNode* getHead() const;
+    vector<int> getBitMap() const;
 
 private:
-    static void dfs(SnakeNode* node);
+    static void dfsPost(SnakeNode* node, function<void(SnakeNode*)> cb);
 
     Direction direction = Direction::DOWN;
     SnakeNode* head = nullptr;
 
-    float defaultSpeedInterval = 1000;
+    float defaultSpeedInterval = 100;
     float speedScale = 1.f;
     long lastMoveTime = 0;
     int moveCount = 0;

@@ -19,7 +19,7 @@ void Scene::enterScene() {
     LOGD("Enter scene");
 
     mapController = std::make_unique<MapController>();
-    mapController->initMap();
+    mapController->initMap(32, 32);
     LOGD("Init map");
 
     looper = std::make_unique<Looper>();

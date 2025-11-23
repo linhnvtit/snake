@@ -4,6 +4,8 @@
 
 #include "Snake.h"
 
+#include <functional>
+
 #include "../../utils/Utils.h"
 
 void Snake::init() {
@@ -31,22 +33,33 @@ SnakeNode* Snake::getHead() const {
     return head;
 }
 
+vector<int> Snake::getBitMap() const {
+    auto map = vector<int>(32, 0);
+    dfsPost(head, [&](SnakeNode* node) {
+        auto pos = node->position;
+        map[pos.second] = 1 << pos.first;
+    });
+
+    return map;
+}
+
 void Snake::move() {
     if (NOW_MS() - lastMoveTime < (defaultSpeedInterval / speedScale)) return;
     moveCount += 1;
 
-    dfs(head);
+    dfsPost(head, [](SnakeNode* node) {
+        if (node->next != nullptr)
+            node->next->position = node->position;
+    });
     head->position.first += dir[direction].first;
     head->position.second += dir[direction].second;
 
     lastMoveTime = NOW_MS();
-    if (!(moveCount % 3)) grow();
 }
 
-void Snake::dfs(SnakeNode* node) {
+void Snake::dfsPost(SnakeNode* node, function<void(SnakeNode*)> cb) {
     if (node == nullptr) return;
-    dfs(node->next);
+    dfsPost(node->next, cb);
 
-    if (node->next != nullptr)
-        node->next->position = node->position;
+    cb(node);
 }

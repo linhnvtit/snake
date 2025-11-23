@@ -8,7 +8,7 @@
 
 class Background {
 public:
-    void init();
+    void init(int mapW, int mapH);
     std::vector<int>& getBitMap();
 
 private:

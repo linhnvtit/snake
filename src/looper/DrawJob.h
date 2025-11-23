@@ -22,6 +22,7 @@ private:
 
     void drawBackground(SDL_Renderer* renderer);
     void drawSnake(SDL_Renderer* renderer);
+    void drawFruit(SDL_Renderer* renderer);
 
-    void drawBlock(SDL_Renderer* renderer,int i, int j, bool shouldFill, int8_t r, int8_t g, int8_t b);
+    static void drawBlock(SDL_Renderer* renderer,int i, int j, bool shouldFill, int8_t r, int8_t g, int8_t b);
 };
